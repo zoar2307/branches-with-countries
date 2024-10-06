@@ -19,6 +19,7 @@ function renderInfo(data) {
                         <div class="data">
                             <p class="country-population">Population : ${data.population}</p>
                             <p class="country-area">Area : ${data.area}</p>
+                            <a href="${data.map}">Map</a>
                         </div>
                         <img class="country-flag" src="${data.flag}" alt="">
                 </div>
@@ -44,7 +45,8 @@ function renderNotFoundError() {
 
 
 
-function onSearchCountry() {
+function onSearchCountry(ev) {
+    ev.preventDefault()
     const elInput = document.querySelector('input')
     const elPre = document.querySelector('pre')
     const elLoader = document.querySelector('.loader')

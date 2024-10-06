@@ -15,22 +15,15 @@
 <body>
     <h1>Countries</h1>
     <div class="search-bar">
-        <input type="text">
-        <button onclick="onSearchCountry()">Search</button>
-        <button onclick="onClearCache()">Clear cache</button>
+        <form onsubmit="onSearchCountry(event)">
+            <input type="text">
+            <button>Search</button>
+            <button type="button" onclick="onClearCache()">Clear cache</button>
+        </form>
     </div>
 
     <pre class="hidden">
-        <div class="country-title-container">
-            <h2></h2>
-        </div>
-        <div class="information-container">
-            <img class="country-flag" src="" alt="">
-            <div class="data">
-                <p class="country-population"></p>
-                <p class="country-area"></p>
-            </div>
-        </div>
+
     </pre>
 
     <div class="loader-container">

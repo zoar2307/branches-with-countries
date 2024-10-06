@@ -35,7 +35,8 @@ function importDate(data) {
         flag: data.flags.png,
         population: data.population,
         area: data.area,
-        neighbors: data.borders
+        neighbors: data.borders,
+        map: res.maps.googleMaps
     }
 }
 
