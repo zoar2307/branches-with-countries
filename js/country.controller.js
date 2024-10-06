@@ -13,6 +13,8 @@ function renderInfo(data) {
                     <p class="country-population">${data.population}</p>
                     <p class="country-area">${data.area}</p>
     `
+
+    elPre.innerHTML = strHTML
 }
 
 function onSearchCountry() {
