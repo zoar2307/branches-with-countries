@@ -25,6 +25,7 @@ pre {
 
 .information-container {
     display: flex;
+    justify-content: space-between;
 }
 
 .data {
@@ -32,4 +33,5 @@ pre {
     flex-direction: column;
     gap: 2em;
     align-items: flex-start;
+    justify-content: center;
 }

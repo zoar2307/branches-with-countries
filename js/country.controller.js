@@ -8,10 +8,16 @@ function renderInfo(data) {
     console.log('Rendering...')
     const elPre = document.querySelector('pre')
     const strHTML = `
+                <div class="country-title-container">
                     <h2>${data.name}</h2>
-                    <img class="country-flag" src="${data.flag}" alt="">
-                    <p class="country-population">${data.population}</p>
-                    <p class="country-area">${data.area}</p>
+                </div>
+                <div class="information-container">
+                        <div class="data">
+                            <p class="country-population">Population : ${data.population}</p>
+                            <p class="country-area">Area : ${data.area}</p>
+                        </div>
+                        <img class="country-flag" src="${data.flag}" alt="">
+                </div>
     `
 
     elPre.innerHTML = strHTML
