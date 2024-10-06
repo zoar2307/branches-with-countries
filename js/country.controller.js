@@ -63,4 +63,10 @@ function showElement(element) {
 
 function hideElement(element) {
     element.classList.add('hidden')
+
+    elInput.value = ''
+}
+
+function onClearCache() {
+    clearCache()
 }
