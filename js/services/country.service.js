@@ -24,3 +24,7 @@ function getCountryByName(name) {
             return countryNames[name]
         })
 }
+
+function clearCache() {
+    removeFromStorage(STORAGE_COUNTRY_NAMES)
+}

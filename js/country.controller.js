@@ -5,7 +5,6 @@ function onGetCountryInfo() {
 }
 
 function renderInfo(data) {
-    console.log('Rendering...')
     const elPre = document.querySelector('pre')
     const strHTML = `
                 <div class="country-title-container">
@@ -27,4 +26,10 @@ function onSearchCountry() {
     const elInput = document.querySelector('input')
     getCountryByName(elInput.value)
         .then(renderInfo)
+
+    elInput.value = ''
+}
+
+function onClearCache() {
+    clearCache()
 }
