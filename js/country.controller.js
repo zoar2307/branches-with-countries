@@ -47,6 +47,7 @@ function onSearchCountry() {
             elImg.addEventListener('load', () => {
                 hideElement(elLoader)
                 showElement(elPre)
+                elInput.value = ''
             })
         })
         .catch(err => {
@@ -63,8 +64,6 @@ function showElement(element) {
 
 function hideElement(element) {
     element.classList.add('hidden')
-
-    elInput.value = ''
 }
 
 function onClearCache() {
