@@ -7,3 +7,7 @@ function onGetCountryInfo() {
 function renderInfo(data) {
     console.log('Rendering...')
 }
+
+function onSearchCountry() {
+    renderInfo()
+}
