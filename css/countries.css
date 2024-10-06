@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+    margin: 1em;
+}
+
+
+pre {
+    padding: 1em;
+}
+
+.search-bar {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+
+    margin: 1em;
+}
+
+.country-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.information-container {
+    display: flex;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    align-items: flex-start;
+}

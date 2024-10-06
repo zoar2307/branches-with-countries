@@ -14,13 +14,24 @@
 
 <body>
     <h1>Countries</h1>
-    <input type="text">
-    <button onclick="onSearchCountry()">Button</button>
+    <div class="search-bar">
+        <input type="text">
+        <button onclick="onSearchCountry()">Button</button>
+    </div>
+
     <pre>
-        <h2></h2>
-        <img class="country-flag" src="" alt="">
-        <p class="country-population"></p>
-        <p class="country-area"></p>
+        <div class="country-title-container">
+            <h2></h2>
+        </div>
+        <div class="information-container">
+            <img class="country-flag" src="" alt="">
+            <div class="data">
+                <p class="country-population"></p>
+                <p class="country-area"></p>
+            </div>
+
+        </div>
+
     </pre>
 
     <script src="lib/axios.js"></script>
