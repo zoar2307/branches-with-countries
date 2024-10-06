@@ -45,6 +45,12 @@ pre {
     height: 200px;
 }
 
+.neighbors-list {
+    display: flex;
+    gap: 1em;
+    cursor: pointer;
+}
+
 .hidden {
     display: none;
 }

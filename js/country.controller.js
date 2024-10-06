@@ -6,6 +6,11 @@ function onGetCountryInfo() {
 
 function renderInfo(data) {
     const elPre = document.querySelector('pre')
+    const listHTML = data.neighbors.map(neighbor => {
+        return `
+                <li onclick="onNeighborClicked('${neighbor}')">${neighbor}</li>
+        `
+    })
     const strHTML = `
                 <div class="country-title-container">
                     <h2>${data.name}</h2>
@@ -16,6 +21,11 @@ function renderInfo(data) {
                             <p class="country-area">Area : ${data.area}</p>
                         </div>
                         <img class="country-flag" src="${data.flag}" alt="">
+                </div>
+                <div >
+                    <ul class="neighbors-list">
+                    ${listHTML.join(' ')}
+                    </ul>
                 </div>
     `
 
@@ -32,11 +42,12 @@ function renderNotFoundError() {
     elPre.innerHTML = strHTML
 }
 
+
+
 function onSearchCountry() {
     const elInput = document.querySelector('input')
     const elPre = document.querySelector('pre')
     const elLoader = document.querySelector('.loader')
-    const elImg = document.querySelector('.country-flag')
 
     hideElement(elPre)
     showElement(elLoader)
@@ -51,6 +62,27 @@ function onSearchCountry() {
             })
         })
         .catch(err => {
+            console.log(err)
+            renderNotFoundError()
+            hideElement(elLoader)
+            showElement(elPre)
+        })
+}
+
+function onNeighborClicked(code) {
+    const elPre = document.querySelector('pre')
+    const elLoader = document.querySelector('.loader')
+    getCountryByCode(code)
+        .then(res => {
+            renderInfo(res)
+            const elImg = document.querySelector('.country-flag')
+            elImg.addEventListener('load', () => {
+                hideElement(elLoader)
+                showElement(elPre)
+            })
+        })
+        .catch(err => {
+            console.log(err)
             renderNotFoundError()
             hideElement(elLoader)
             showElement(elPre)
