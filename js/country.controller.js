@@ -74,6 +74,8 @@ function onSearchCountry(ev) {
 function onNeighborClicked(code) {
     const elPre = document.querySelector('pre')
     const elLoader = document.querySelector('.loader')
+    hideElement(elPre)
+    showElement(elLoader)
     getCountryByCode(code)
         .then(res => {
             renderInfo(res)
@@ -84,7 +86,6 @@ function onNeighborClicked(code) {
             })
         })
         .catch(err => {
-            console.log(err)
             renderNotFoundError()
             hideElement(elLoader)
             showElement(elPre)

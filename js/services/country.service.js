@@ -36,7 +36,7 @@ function importDate(data) {
         population: data.population,
         area: data.area,
         neighbors: data.borders,
-        map: res.maps.googleMaps
+        map: data.maps.googleMaps
     }
 }
 
