@@ -5,7 +5,6 @@ function onGetCountryInfo() {
 }
 
 function renderInfo(data) {
-    console.log('Rendering...')
     const elPre = document.querySelector('pre')
     const strHTML = `
                 <div class="country-title-container">
@@ -23,8 +22,42 @@ function renderInfo(data) {
     elPre.innerHTML = strHTML
 }
 
+function renderNotFoundError() {
+    const elPre = document.querySelector('pre')
+    const strHTML = `
+                <div class="country-title-container">
+                    <h2>No data found</h2>
+                </div>
+    `
+
+    elPre.innerHTML = strHTML
+}
+
 function onSearchCountry() {
     const elInput = document.querySelector('input')
+    const elPre = document.querySelector('pre')
+    const elLoader = document.querySelector('.loader')
+    const elImg = document.querySelector('.country-flag')
+
+    hideElement(elPre)
+    showElement(elLoader)
     getCountryByName(elInput.value)
-        .then(renderInfo)
+        .then(res => {
+            renderInfo(res)
+            const elImg = document.querySelector('.country-flag')
+            elImg.addEventListener('load', () => {
+                hideElement(elLoader)
+                showElement(elPre)
+            })
+        })
+        .catch(console.log)
+}
+
+
+function showElement(element) {
+    element.classList.remove('hidden')
+}
+
+function hideElement(element) {
+    element.classList.add('hidden')
 }

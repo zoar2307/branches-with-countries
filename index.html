@@ -19,7 +19,7 @@
         <button onclick="onSearchCountry()">Button</button>
     </div>
 
-    <pre>
+    <pre class="hidden">
         <div class="country-title-container">
             <h2></h2>
         </div>
@@ -29,10 +29,13 @@
                 <p class="country-population"></p>
                 <p class="country-area"></p>
             </div>
-
         </div>
 
     </pre>
+
+    <div class="loader-container">
+        <img class="loader hidden" src="loader/gear-spinner.svg" alt="">
+    </div>
 
     <script src="lib/axios.js"></script>
 

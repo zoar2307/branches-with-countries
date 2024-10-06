@@ -35,3 +35,16 @@ pre {
     align-items: flex-start;
     justify-content: center;
 }
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+}
+
+.loader {
+    height: 200px;
+}
+
+.hidden {
+    display: none;
+}
