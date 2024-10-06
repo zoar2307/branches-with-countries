@@ -12,9 +12,15 @@ function getCountryByName(name) {
 
     const url = `https://restcountries.com/v3.1/name/${name}?fullText=true`
     return axios.get(url)
+        .then(res => res.data[0])
         .then(res => {
-            countryNames[name] = res.data[0]
+            countryNames[name] = {
+                name: res.name.common,
+                flag: res.flags.png,
+                population: res.population,
+                area: res.area
+            }
             saveToStorage(STORAGE_COUNTRY_NAMES, countryNames)
-            return res.data[0]
+            return countryNames[name]
         })
 }
