@@ -29,7 +29,6 @@ function renderNotFoundError() {
                     <h2>No data found</h2>
                 </div>
     `
-
     elPre.innerHTML = strHTML
 }
 
@@ -50,7 +49,11 @@ function onSearchCountry() {
                 showElement(elPre)
             })
         })
-        .catch(console.log)
+        .catch(err => {
+            renderNotFoundError()
+            hideElement(elLoader)
+            showElement(elPre)
+        })
 }
 
 
