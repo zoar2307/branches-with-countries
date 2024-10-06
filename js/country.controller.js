@@ -32,11 +32,11 @@ function renderNotFoundError() {
     elPre.innerHTML = strHTML
 }
 
-function onSearchCountry() {
+function onSearchCountry(ev) {
+    ev.preventDefault()
     const elInput = document.querySelector('input')
     const elPre = document.querySelector('pre')
     const elLoader = document.querySelector('.loader')
-    const elImg = document.querySelector('.country-flag')
 
     hideElement(elPre)
     showElement(elLoader)
