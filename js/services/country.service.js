@@ -18,7 +18,8 @@ function getCountryByName(name) {
                 name: res.name.common,
                 flag: res.flags.png,
                 population: res.population,
-                area: res.area
+                area: res.area,
+                map: res.maps.googleMaps
             }
             saveToStorage(STORAGE_COUNTRY_NAMES, countryNames)
             return countryNames[name]

@@ -17,6 +17,9 @@ function renderInfo(data) {
                         </div>
                         <img class="country-flag" src="${data.flag}" alt="">
                 </div>
+                <div class="links">
+                     <a href="${data.map}">Map</a>
+                </div>
     `
 
     elPre.innerHTML = strHTML
