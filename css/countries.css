@@ -5,7 +5,10 @@ h1 {
 
 
 pre {
-    padding: 1em;
+    margin: 1em;
+    padding: 0 1em;
+    border: 1px solid black;
+    border-radius: 0.5em;
 }
 
 .search-bar {
@@ -15,6 +18,16 @@ pre {
     align-items: center;
 
     margin: 1em;
+}
+
+input {
+    border-radius: 0.5em;
+    padding: 0.5em;
+}
+
+button {
+    border-radius: 0.5em;
+    padding: 0.5em;
 }
 
 .country-title-container {
@@ -33,7 +46,7 @@ pre {
     flex-direction: column;
     gap: 2em;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .loader-container {
@@ -47,10 +60,47 @@ pre {
 
 .neighbors-list {
     display: flex;
+    justify-content: flex-start;
     gap: 1em;
+    flex-wrap: wrap;
+}
+
+.map {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.7em;
+    background-color: rgb(230, 173, 173);
+    cursor: pointer;
+}
+
+.border {
+    padding: 0.7em;
+    background-color: lightblue;
     cursor: pointer;
 }
 
 .hidden {
     display: none;
+}
+
+@media (width < 700px) {
+    pre .country-flag {
+        width: 260px;
+    }
+
+    .map {
+        padding: 0.5em;
+    }
+
+    .border {
+        padding: 0.4em;
+    }
+}
+
+
+@media (width < 550px) {
+    pre .country-flag {
+        width: 200px;
+    }
 }

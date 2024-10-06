@@ -8,7 +8,7 @@ function renderInfo(data) {
     const elPre = document.querySelector('pre')
     const listHTML = data.neighbors.map(neighbor => {
         return `
-                <li onclick="onNeighborClicked('${neighbor}')">${neighbor}</li>
+                <li class="border" onclick="onNeighborClicked('${neighbor}')">${neighbor}</li>
         `
     })
     const strHTML = `
@@ -19,15 +19,14 @@ function renderInfo(data) {
                         <div class="data">
                             <p class="country-population">Population : ${data.population}</p>
                             <p class="country-area">Area : ${data.area}</p>
-                            <a href="${data.map}">Map</a>
+                            <a class="map" href="${data.map}">Map</a>
+                                <ul class="neighbors-list">
+                                    ${listHTML.join(' ')}
+                                </ul>
                         </div>
-                        <img class="country-flag" src="${data.flag}" alt="">
-                </div>
-                <div >
-                    <ul class="neighbors-list">
-                    ${listHTML.join(' ')}
-                    </ul>
-                </div>
+                              <img class="country-flag" src="${data.flag}" alt="">
+                        </div>
+                
     `
 
     elPre.innerHTML = strHTML
