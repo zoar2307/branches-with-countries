@@ -16,5 +16,7 @@ function renderInfo(data) {
 }
 
 function onSearchCountry() {
-    renderInfo()
+    const elInput = document.querySelector('input')
+    getCountryByName(elInput.value)
+        .then(renderInfo)
 }
